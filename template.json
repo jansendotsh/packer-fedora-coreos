@@ -14,7 +14,7 @@
             "vm_name": "{{user `vm_name`}}",
             "http_directory": ".",
             "boot_wait": "{{user `boot_wait`}}",
-            "boot_command": "curl -O http://{{.HTTPIP}}:{{.HTTPPort}}/ignition.ign && sudo coreos-installer install -i ignition.ign /dev/sda && poweroff<enter>",
+            "boot_command": "curl -O http://{{.HTTPIP}}:{{.HTTPPort}}/ignition.ign && sudo coreos-installer install /dev/sda --ignition-file ignition.ign && poweroff<enter>",
             "disable_shutdown": true,
             "communicator": "none",
             "virtualbox_version_file": "",
@@ -42,12 +42,12 @@
       "box_tag": "jansendotsh/fedora-coreos",
       "vm_name": "fedora-coreos",
       "cpus": "2",
-      "memory": "2048",
+      "memory": "2200",
       "disk_size": "40960",
       "iso_url": "https://builds.coreos.fedoraproject.org/prod/streams/stable/builds/31.20200407.3.0/x86_64/fedora-coreos-31.20200407.3.0-live.x86_64.iso",
       "iso_checksum": "a1b33378e66838cc441d0e7d6ab1bacb0f76adc2a0a58582b4f475f38d120cc3",
       "headless": "true",
-      "boot_wait": "30s",
+      "boot_wait": "90s",
       "version": "31.20200407.3.0"
     }
 }
